@@ -26,4 +26,4 @@ phases:
 artifacts:
   files:
     - "**/*"
-  base-directory: dist/beerCatalogues
+  base-directory: dist/
