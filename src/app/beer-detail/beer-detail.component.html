@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>{{ beer.brewery }}</h1>
+  <dl class="list">
+    <dt>Name</dt>
+    <dd>{{ beer.name }}</dd>
+    <dt>Type</dt>
+    <dd>{{ beer.type }}</dd>
+    <dt>Style</dt>
+    <dd>{{ beer.style }}</dd>
+    <dt>Location</dt>
+    <dd>{{ beer.location }}</dd>
+    <dt>Update Date</dt>
+    <dd>{{ beer.updated_date | date:'short' }}</dd>
+  </dl>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <a [routerLink]="['/beer-edit', beer._id]" class="btn btn-success">EDIT</a>
+    <button class="btn btn-danger" type="button" (click)="deleteBeer(beer._id)">DELETE</button>
+  </div>
+</div>
