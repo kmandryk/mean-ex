@@ -10,6 +10,7 @@ import { BeerDetailComponent } from './beer-detail/beer-detail.component';
 import { BeerCreateComponent } from './beer-create/beer-create.component';
 import { BeerEditComponent } from './beer-edit/beer-edit.component';
 
+
 const appRoutes: Routes = [
   {
     path: 'beers',

@@ -2,7 +2,7 @@
   <h1>Add New Beer</h1>
   <div class="row">
     <div class="col-md-6">
-      <form (ngSubmit)="saveBeer()" #beerForm="ngForm">
+      <form id="beerForm" (ngSubmit)="saveBeer()" #beerForm="ngForm">
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" class="form-control" [(ngModel)]="beer.name" name="name" required>
@@ -17,11 +17,15 @@
         </div>
         <div class="form-group">
           <label for="name">Style</label>
-          <input type="number" class="form-control" [(ngModel)]="beer.style" name="style" required>
+          <input type="text" class="form-control" [(ngModel)]="beer.style" name="style" required>
         </div>
         <div class="form-group">
           <label for="name">Location</label>
           <input type="text" class="form-control" [(ngModel)]="beer.location" name="location" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Description</label>
+          <input type="text" class="form-control" [(ngModel)]="beer.descr" name="descr" required>
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-success" [disabled]="!beerForm.form.valid">Save</button>

@@ -1,21 +1,57 @@
 <div class="container">
-  <h1>Beer List
+  <h2>Beer List
     <a [routerLink]="['/beer-create']" class="btn btn-default btn-lg">
       <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
     </a>
-  </h1>
+  </h2>
+
+
+
+<div style="display:flex">
+  <div class="form-group param">
+    <strong>Type</strong>
+    <select class="form-control" name="type" [(ngModel)]="type">
+      <option></option>
+      <option *ngFor="let t of types">{{ t }}</option>
+    </select>
+  </div>
+
+  <div class="form-group param">
+    <strong>Style</strong>
+    <select class="form-control" name="style" [(ngModel)]="style">
+      <option></option>
+      <option *ngFor="let s of styles">{{ s }}</option>
+    </select>
+  </div>
+
+  <div class="form-group param">
+    <strong>Location</strong>
+    <select class="form-control" name="location" [(ngModel)]="location">
+      <option></option>
+      <option *ngFor="let l of locations">{{ l }}</option>
+    </select>
+  </div>
+</div>
+<div>{{text}}</div>
+  <button (click)="search()">Search</button>
+
+  <br /><br />
   <table class="table">
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Action</th>
+        <th>Brewery</th>
+        <th>Type of Beer</th>
+        <th>Style of Beer</th>
+        <th>Brewery Location</th>
+        <th>Details</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let beer of beers">
+      <tr *ngFor="let beer of beers ">
         <td>{{ beer.brewery }}</td>
         <td>{{ beer.type }}</td>
+        <td>{{ beer.style }}</td>
+        <td>{{ beer.location }}</td>
         <td><a [routerLink]="['/beer-details', beer._id]">Show Detail</a></td>
       </tr>
     </tbody>
